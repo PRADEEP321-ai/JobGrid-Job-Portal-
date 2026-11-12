@@ -1,0 +1,45 @@
+
+spring:
+  application:
+    name: JobGrid
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/jobgrid}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+  # Google Gemini configuration
+  ai:
+    model:
+      chat: google-genai
+
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY}
+        chat:
+          model: gemini-3.8-flash
+          temperature: 0.2
+          response-mime-type: application/json
+
+# Admin configuration
+admin:
+  name: ${ADMIN_NAME:Super Admin}
+  email: ${ADMIN_EMAIL:admin@jobgrid.com}
+  password: ${ADMIN_PASSWORD}
+
+
+#JWT Authentication 
+jwt:
+  expirationTime: 3600000
+  secret: ${JWT_SECRET}

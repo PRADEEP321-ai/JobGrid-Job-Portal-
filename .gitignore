@@ -1,0 +1,20 @@
+# Dependencies and build output
+node_modules/
+dist/
+target/
+bin/
+
+# IDE and workspace files
+.metadata/
+.settings/
+.classpath
+.project
+.idea/
+*.iml
+
+# Uploads and secrets
+uploads/
+.env
+*.env
+
+application-local.yaml
